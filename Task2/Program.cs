@@ -17,13 +17,13 @@ namespace Task2
 
         public static int WinterSeason(int[] temp)
         {
-            if (temp.Length < 2)
-                throw new System.ArgumentException("The length of the temperature array can not be less than 2");
+            if (temp.Length < 2 || temp.Length > 300000)
+                throw new System.ArgumentException("The length of the temperature array can not be less than 2 or more 300000");
             int winterDays = 1;
             int firstWinterDay = temp[0];
             for (int i = 1; i < temp.Length; i++)
             {
-                if (temp[i] > firstWinterDay)
+                if (temp[i] > firstWinterDay && temp[i] > 0)
                 {
                     return winterDays;
                 }
